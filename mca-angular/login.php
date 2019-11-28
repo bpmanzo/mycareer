@@ -48,6 +48,19 @@ if(empty($error))
     if(password_verify($form_data->password, $row["password"]))
     {
      $_SESSION["fname"] = $row["fname"];
+     $_SESSION["lname"] = $row["lname"];
+     $_SESSION["email"] = $row["email"];
+     $_SESSION["education"] = $row["education"];
+     $_SESSION["skill1"] = $row["skill1"];
+     $_SESSION["skill2"] = $row["skill2"];
+     $_SESSION["skill3"] = $row["skill3"];
+     $_SESSION["interest1"] = $row["interest1"];
+     $_SESSION["interest2"] = $row["interest2"];
+     $_SESSION["interest3"] = $row["interest3"];
+     $_SESSION["interest4"] = $row["interest4"];
+     $_SESSION["interest5"] = $row["interest5"];
+
+
     }
     else
     {

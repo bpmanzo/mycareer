@@ -99,7 +99,14 @@ else
  $data[':interest5'] = $form_data->interest5;
 }
 
-
+if(empty($form_data->education))
+{
+ $error[] = 'Education is required';
+}
+else
+{
+ $data[':education'] = $form_data->education;
+}
 
 
 
@@ -133,7 +140,7 @@ else
 if(empty($error))
 {
  $query = "
- INSERT INTO register (fname, lname, skill1, skill2, skill3, interest1, interest2, interest3, interest4, interest5, email, password) VALUES (:fname, :lname, :skill1, :skill2, :skill3, :interest1, :interest2, :interest3, :interest4, :interest5, :email, :password)
+ INSERT INTO register (fname, lname, skill1, skill2, skill3, interest1, interest2, interest3, interest4, interest5, education, email, password) VALUES (:fname, :lname, :skill1, :skill2, :skill3, :interest1, :interest2, :interest3, :interest4, :interest5, :education, :email, :password)
  ";
  $statement = $connect->prepare($query);
  if($statement->execute($data))

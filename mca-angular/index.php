@@ -25,6 +25,7 @@ session_start();
 
   <div ng-app="login_register_app" ng-controller="login_register_controller" class="container form_style">
    <?php
+   
    if(!isset($_SESSION["fname"]))
    {
    ?>
@@ -79,211 +80,152 @@ session_start();
       </div>
 
       <div class="form-group">
-        <label>Interests</label>
-        <div class="input-group">                                        
-          <input type="text" id="interest1" "name="interest1" ng-model="registerData.interest1" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="int_list1" class="dropdown-menu">
-                <li><a href="">Animation</a></li>
-                <li><a href="">Arts & Crafts</a></li>
-                <li><a href="">Computer Coding</a></li>
-                <li><a href="">Computer Games</a></li>
-                <li><a href="">Drawing</a></li>
-                <li><a href="">Filmography</a></li>
-                <li><a href="">Internet Surfing</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Photography</a></li>
-                <li><a href="">Reading</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Social Media</a></li>
-                <li><a href="">Vlogging</a></li>
-                <li><a href="">Watching TV/Movie</a></li>
-            </ul>
-            </div>
-        </div>     
-      </div>
-
-      
-
-      
-
-      <div class="form-group">
-        
-        <div class="input-group">                                        
-          <input type="text" id="interest2" name="interest2" ng-model="registerData.interest2" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="int_list2" class="dropdown-menu">
-                <li><a href="">Animation</a></li>
-                <li><a href="">Arts & Crafts</a></li>
-                <li><a href="">Computer Coding</a></li>
-                <li><a href="">Computer Games</a></li>
-                <li><a href="">Drawing</a></li>
-                <li><a href="">Filmography</a></li>
-                <li><a href="">Internet Surfing</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Photography</a></li>
-                <li><a href="">Reading</a></li>
-                <li><a href="">Social Media</a></li>
-                <li><a href="">Vlogging</a></li>
-                <li><a href="">Watching TV/Movie</a></li>
-            </ul>
-            </div>
-        </div>     
+        <label>Education:</label>
+        <select name="education" ng-model="registerData.education" class="form-control" id="education">
+                <option>Pre-K12 (Grade 10)</option>
+                <option>K12 (Grade 11)</option>
+                <option>K12 (Grade 12)</option>
+                <option>College</option>
+                <option>With Degree</option>
+                <option>Vocational</option>
+        </select>     
       </div>
 
       <div class="form-group">
-        
-        <div class="input-group">                                        
-          <input type="text" id="interest3" name="interest3" ng-model="registerData.interest3" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="int_list3" class="dropdown-menu">
-                <li><a href="">Animation</a></li>
-                <li><a href="">Arts & Crafts</a></li>
-                <li><a href="">Computer Coding</a></li>
-                <li><a href="">Computer Games</a></li>
-                <li><a href="">Drawing</a></li>
-                <li><a href="">Filmography</a></li>
-                <li><a href="">Internet Surfing</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Photography</a></li>
-                <li><a href="">Reading</a></li>
-                <li><a href="">Social Media</a></li>
-                <li><a href="">Vlogging</a></li>
-                <li><a href="">Watching TV/Movie</a></li>
-            </ul>
-            </div>
-        </div>     
+        <label>Interests:</label>
+        <select name="interest1" ng-model="registerData.interest1" class="form-control" id="interest1">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
+                <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
+                <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
+                <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
+        </select>     
       </div>
 
       <div class="form-group">
-       
-        <div class="input-group">                                        
-          <input type="text" id="interest4" name="interest4" ng-model="registerData.interest4" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="int_list4" class="dropdown-menu">
-                <li><a href="">Animation</a></li>
-                <li><a href="">Arts & Crafts</a></li>
-                <li><a href="">Computer Coding</a></li>
-                <li><a href="">Computer Games</a></li>
-                <li><a href="">Drawing</a></li>
-                <li><a href="">Filmography</a></li>
-                <li><a href="">Internet Surfing</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Photography</a></li>
-                <li><a href="">Reading</a></li>
-                <li><a href="">Social Media</a></li>
-                <li><a href="">Vlogging</a></li>
-                <li><a href="">Watching TV/Movie</a></li>
-            </ul>
-            </div>
-        </div>     
+
+        <select name="interest2" ng-model="registerData.interest2" class="form-control" id="interest2">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
+                <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
+                <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
+                <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
+        </select>     
       </div>
 
       <div class="form-group">
-      
-        <div class="input-group">                                        
-          <input type="text" id="interest5" name="interest5" ng-model="registerData.interest5" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="int_list5" class="dropdown-menu">
-                <li><a href="">Animation</a></li>
-                <li><a href="">Arts & Crafts</a></li>
-                <li><a href="">Computer Coding</a></li>
-                <li><a href="">Computer Games</a></li>
-                <li><a href="">Drawing</a></li>
-                <li><a href="">Filmography</a></li>
-                <li><a href="">Internet Surfing</a></li>
-                <li><a href="">Music</a></li>
-                <li><a href="">Photography</a></li>
-                <li><a href="">Reading</a></li>
-                <li><a href="">Social Media</a></li>
-                <li><a href="">Vlogging</a></li>
-                <li><a href="">Watching TV/Movie</a></li>
-            </ul>
-            </div>
-        </div>     
+
+        <select name="interest3" ng-model="registerData.interest3" class="form-control" id="interest3">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
+                <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
+                <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
+                <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
+        </select>     
       </div>
 
       <div class="form-group">
-        <label>Skills</label>
-        <div class="input-group">                                        
-          <input type="text" id="skill1" name="skill1" ng-model="registerData.skill1" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="skill_list1" class="dropdown-menu">
-                <li><a href="">Analytical</a></li>
-                <li><a href="">Critical Thinking</a></li>
-                <li><a href="">Detail-oriented</a></li>
-                <li><a href="">Math</a></li>
-                <li><a href="">Multi-tasking</a></li>
-                <li><a href="">Networking</a></li>
-                <li><a href="">Presentation Skills</a></li>
-                <li><a href="">Technical</a></li>
-            </ul>
-            </div>
-        </div>     
+
+        <select name="interest4" ng-model="registerData.interest4" class="form-control" id="interest4">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
+                <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
+                <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
+                <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
+        </select>     
+      </div>
+
+      <div class="form-group">
+        <select name="interest5" ng-model="registerData.interest5" class="form-control" id="interest5">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
+                <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
+                <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
+                <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
+        </select>     
+      </div>
+
+      <div class="form-group">
+        <label>Skills:</label>
+        <select name="skill1" ng-model="registerData.skill1" class="form-control" id="skill1">
+                <option>Analytical</option>
+                <option>Critical Thinking</option>
+                <option>Detail-oriented</option>
+                <option>Math</option>
+                <option>Multi-tasking</option>
+                <option>Networking</option>
+                <option>Presentation Skills</option>
+                <option>Technical</option>
+        </select>     
       </div>
 
       <div class="form-group">
         
-        <div class="input-group">                                        
-          <input type="text" id="skill2" name="skill2" ng-model="registerData.skill2" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="skill_list2" class="dropdown-menu">
-                <li><a href="">Analytical</a></li>
-                <li><a href="">Critical Thinking</a></li>
-                <li><a href="">Detail-oriented</a></li>
-                <li><a href="">Math</a></li>
-                <li><a href="">Multi-tasking</a></li>
-                <li><a href="">Networking</a></li>
-                <li><a href="">Presentation Skills</a></li>
-                <li><a href="">Technical</a></li>
-            </ul>
-            </div>
-        </div>     
+        <select name="skill2" ng-model="registerData.skill2" class="form-control" id="skill2">
+                <option>Analytical</option>
+                <option>Critical Thinking</option>
+                <option>Detail-oriented</option>
+                <option>Math</option>
+                <option>Multi-tasking</option>
+                <option>Networking</option>
+                <option>Presentation Skills</option>
+                <option>Technical</option>
+        </select>     
       </div>
 
       <div class="form-group">
         
-        <div class="input-group">                                        
-          <input type="text" id="skill3" name="skill3" ng-model="registerData.skill3" class="form-control" />
-            <div class="input-group-btn">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul id="skill_list3" class="dropdown-menu">
-                <li><a href="">Analytical</a></li>
-                <li><a href="">Critical Thinking</a></li>
-                <li><a href="">Detail-oriented</a></li>
-                <li><a href="">Math</a></li>
-                <li><a href="">Multi-tasking</a></li>
-                <li><a href="">Networking</a></li>
-                <li><a href="">Presentation Skills</a></li>
-                <li><a href="">Technical</a></li>
-            </ul>
-            </div>
-        </div>     
+        <select name="skill3" ng-model="registerData.skill3" class="form-control" id="sel3">
+                <option>Analytical</option>
+                <option>Critical Thinking</option>
+                <option>Detail-oriented</option>
+                <option>Math</option>
+                <option>Multi-tasking</option>
+                <option>Networking</option>
+                <option>Presentation Skills</option>
+                <option>Technical</option>
+        </select>     
       </div>
-
       
           
 
@@ -319,6 +261,8 @@ session_start();
         <div class="row">
         <div class="col-sm-9">
           <h2><strong>Welcome - <?php echo $_SESSION["fname"];?></strong></h2>
+
+
           <a href="logout.php">Logout</a>
         </div>
         <div class="col-sm-3">
@@ -341,7 +285,7 @@ session_start();
         </div>
 
         <div class="col-sm-3 text-center social">
-          <span class="number">Phone:<strong>+0001732226402</strong></span>
+          <span class="number">Email:<strong><?php echo $_SESSION["email"];?></strong></span>
           <div class="button-email">
             <a href="mailto:arick@yahoo.com" class="btn btn-outline-success btn-block"><i class="fa fa-envelope-o"></i> Send Email</a>
           </div>
@@ -410,32 +354,7 @@ session_start();
 
 <script>
 
-//Skills and Interest Dropdown
-$('#skill_list1 li').on('click', function(){
-    $('#skill1').val($(this).text());
-});
-$('#skill_list2 li').on('click', function(){
-    $('#skill2').val($(this).text());
-});
-$('#skill_list3 li').on('click', function(){
-    $('#skill3').val($(this).text());
-});
 
-$('#int_list1 li').on('click', function(){
-    $('#interest1').val($(this).text());
-});
-$('#int_list2 li').on('click', function(){
-    $('#interest2').val($(this).text());
-});
-$('#int_list3 li').on('click', function(){
-    $('#interest3').val($(this).text());
-});
-$('#int_list4 li').on('click', function(){
-    $('#interest4').val($(this).text());
-});
-$('#int_list5 li').on('click', function(){
-    $('#interest5').val($(this).text());
-});
 
 
 
