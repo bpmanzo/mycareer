@@ -56,48 +56,32 @@ else
 
 if(empty($form_data->interest1))
 {
- $error[] = 'Choose five(5) interests';
+ $error[] = 'Choose an interest';
 }
 else
 {
  $data[':interest1'] = $form_data->interest1;
 }
 
-if(empty($form_data->interest2))
-{
- $error[] = 'Choose five(5) interests';
-}
-else
-{
- $data[':interest2'] = $form_data->interest2;
-}
+// if(empty($form_data->interest2))
+// {
+//  $error[] = 'Choose five(5) interests';
+// }
+// else
+// {
+//  $data[':interest2'] = $form_data->interest2;
+// }
 
-if(empty($form_data->interest3))
-{
- $error[] = 'Choose five(5) interests';
-}
-else
-{
- $data[':interest3'] = $form_data->interest3;
-}
+// if(empty($form_data->interest3))
+// {
+//  $error[] = 'Choose five(5) interests';
+// }
+// else
+// {
+//  $data[':interest3'] = $form_data->interest3;
+// }
 
-if(empty($form_data->interest4))
-{
- $error[] = 'Choose five(5) interests';
-}
-else
-{
- $data[':interest4'] = $form_data->interest4;
-}
 
-if(empty($form_data->interest5))
-{
- $error[] = 'Choose five(5) interests';
-}
-else
-{
- $data[':interest5'] = $form_data->interest5;
-}
 
 if(empty($form_data->education))
 {
@@ -108,7 +92,23 @@ else
  $data[':education'] = $form_data->education;
 }
 
+if(empty($form_data->degree))
+{
+ $error[] = 'Degree is required';
+}
+else
+{
+ $data[':degree'] = $form_data->degree;
+}
 
+if(empty($form_data->workexp))
+{
+ $error[] = 'Work experience is required';
+}
+else
+{
+ $data[':workexp'] = $form_data->workexp;
+}
 
 
 
@@ -140,7 +140,7 @@ else
 if(empty($error))
 {
  $query = "
- INSERT INTO register (fname, lname, skill1, skill2, skill3, interest1, interest2, interest3, interest4, interest5, education, email, password) VALUES (:fname, :lname, :skill1, :skill2, :skill3, :interest1, :interest2, :interest3, :interest4, :interest5, :education, :email, :password)
+ INSERT INTO register (fname, lname, skill1, skill2, skill3, interest1, education, degree, workexp, email, password) VALUES (:fname, :lname, :skill1, :skill2, :skill3, :interest1, :education, :degree, :workexp, :email, :password)
  ";
  $statement = $connect->prepare($query);
  if($statement->execute($data))
