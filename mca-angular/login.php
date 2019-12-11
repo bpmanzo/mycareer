@@ -34,8 +34,11 @@ if(empty($form_data->password))
 if(empty($error))
 {
  $query = "
- SELECT * FROM register 
- WHERE email = :email
+  SELECT *, 
+  (select job_test.Job_Name from job_test, register where register.email = :email AND job_test.Skills_Required = register.skill1 AND job_test.Interests = register.interest1 AND job_test.Education = register.education LIMIT 1) 
+  AS hot_job 
+  FROM register 
+  WHERE email = :email
  ";
  $statement = $connect->prepare($query);
  if($statement->execute($data))
@@ -51,15 +54,15 @@ if(empty($error))
      $_SESSION["lname"] = $row["lname"];
      $_SESSION["email"] = $row["email"];
      $_SESSION["education"] = $row["education"];
-     $_SESSION["degree"] = $row["degree"];
-     $_SESSION["workexp"] = $row["workexp"];
      $_SESSION["skill1"] = $row["skill1"];
      $_SESSION["skill2"] = $row["skill2"];
      $_SESSION["skill3"] = $row["skill3"];
      $_SESSION["interest1"] = $row["interest1"];
-
-
-
+     $_SESSION["interest2"] = $row["interest2"];
+     $_SESSION["interest3"] = $row["interest3"];
+     $_SESSION["interest4"] = $row["interest4"];
+     $_SESSION["interest5"] = $row["interest5"];
+     $_SESSION["hot_job"] = $row["hot_job"];
 
     }
     else
@@ -78,6 +81,11 @@ else
 {
  $validation_error = implode(", ", $error);
 }
+
+
+
+
+
 
 $output = array(
  'error' => $validation_error

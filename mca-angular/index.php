@@ -82,59 +82,73 @@ session_start();
       <div class="form-group">
         <label>Education:</label>
         <select name="education" ng-model="registerData.education" class="form-control" id="education">
+                <option>Pre-K12 (Grade 10)</option>
+                <option>K12 (Grade 11)</option>
                 <option>K12 (Grade 12)</option>
                 <option>College</option>
                 <option>With Degree</option>
+                <option>Vocational</option>
         </select>     
       </div>
 
       <div class="form-group">
-        <label>Degree:</label>
-        <select name="degree" ng-model="registerData.degree" class="form-control" id="degree">
-                <option>Computer Engineering</option>
-                <option>Computer Science</option>
-                <option>Information Technology</option>
-                <option>Not Applicable</option>
-        </select>     
-      </div>
-
-      <div class="form-group">
-        <label>Work Experience:</label>
-        <select name="workexp" ng-model="registerData.workexp" class="form-control" id="workexp">
-                <option>1-4 experience</option>
-                <option>None</option>
-                <option>OJT/Intern</option>
-        </select>     
-      </div>
-
-      <div class="form-group">
-        <label>Interest:</label>
+        <label>Interests:</label>
         <select name="interest1" ng-model="registerData.interest1" class="form-control" id="interest1">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
                 <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
                 <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
                 <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
         </select>     
       </div>
 
-      <!-- <div class="form-group">
+      <div class="form-group">
 
         <select name="interest2" ng-model="registerData.interest2" class="form-control" id="interest2">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
                 <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
                 <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
                 <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
         </select>     
       </div>
 
       <div class="form-group">
 
         <select name="interest3" ng-model="registerData.interest3" class="form-control" id="interest3">
+                <option>Animation</option>
+                <option>Arts & Crafts</option>
+                <option>Computer Coding</option>
                 <option>Computer Games</option>
+                <option>Drawing</option>
+                <option>Filmography</option>
+                <option>Internet Surfing</option>
                 <option>Music</option>
+                <option>Photography</option>
+                <option>Reading</option>
                 <option>Social Media</option>
+                <option>Vlogging</option>
+                <option>Watching TV/Movie</option>
         </select>     
-      </div> -->
+      </div>
 
-<!--       <div class="form-group">
+      <div class="form-group">
 
         <select name="interest4" ng-model="registerData.interest4" class="form-control" id="interest4">
                 <option>Animation</option>
@@ -169,7 +183,7 @@ session_start();
                 <option>Vlogging</option>
                 <option>Watching TV/Movie</option>
         </select>     
-      </div> -->
+      </div>
 
       <div class="form-group">
         <label>Skills:</label>
@@ -179,6 +193,7 @@ session_start();
                 <option>Detail-oriented</option>
                 <option>Math</option>
                 <option>Multi-tasking</option>
+                <option>Networking</option>
                 <option>Presentation Skills</option>
                 <option>Technical</option>
         </select>     
@@ -192,6 +207,7 @@ session_start();
                 <option>Detail-oriented</option>
                 <option>Math</option>
                 <option>Multi-tasking</option>
+                <option>Networking</option>
                 <option>Presentation Skills</option>
                 <option>Technical</option>
         </select>     
@@ -205,6 +221,7 @@ session_start();
                 <option>Detail-oriented</option>
                 <option>Math</option>
                 <option>Multi-tasking</option>
+                <option>Networking</option>
                 <option>Presentation Skills</option>
                 <option>Technical</option>
         </select>     
@@ -244,13 +261,15 @@ session_start();
         <div class="row">
         <div class="col-sm-9">
           <h2><strong>Welcome - <?php echo $_SESSION["fname"];?></strong></h2>
+              Welcome - <?php echo $_SESSION["hot_job"];?>
+
           <a href="logout.php">Logout</a>
         </div>
-<!--         <div class="col-sm-3">
+        <div class="col-sm-3">
           <div class="button pull-right">
             <a href="#" class="btn btn-outline-success btn-sm">Edit Profile <i class="fa fa-pencil"></i></a>
           </div>
-        </div> -->
+        </div>
         </div>
       </div>
 
@@ -260,9 +279,9 @@ session_start();
         </div>
 
         <div class="col-sm-6"> 
-          <h5><?php echo $_SESSION["degree"];?>, <small>Degree</small></h5>
-          <p>Education: <?php echo $_SESSION["education"];?></p>
-          <p>Work Experience: <?php echo $_SESSION["workexp"];?></p>
+          <h5Associate Professor, <small>Dept. of Alien Agriculture, Jaarvlar-3 University</small></h5>
+          <p>PhD on Molecular Shwanky Physics</p>
+          <p>Address: 123 Cuba str Tampa, Fl, Earth 137</p>
         </div>
 
         <div class="col-sm-3 text-center social">
@@ -302,31 +321,21 @@ session_start();
   <div class="row">
         <div class="col-sm-12">
           <div class="card card-block text-xs-left">
-            <h5><i class="fa fa-user fa-fw"></i>About Me</h5>
+            <h5><i class="fa fa-user fa-fw"></i>Biography</h5>
             
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <p>Rick Sanchez C-137 is the father of Beth Smith, and the grandfather of Morty and Summer Smith. Aged 60 years old, he is said to have been away from the family for around fourteen years prior to the events of the show's first episode, "Pilot". He frequently travels on adventures through space and other planets and dimensions with his grandson Morty.</p>
           </div>
         </div>
       </div>
-
   <div class="row">
     <div class="col-sm-12">
         <div class="card card-block">
-          <h5><i class="fa fa-rocket fa-fw"></i>Interest</h5>
+          <h5><i class="fa fa-rocket fa-fw"></i>Interests</h5>
           <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
-            <li class="list-group-item"><?php echo $_SESSION["interest1"];?></li>
-          </ul>
-        </div>
-    </div>
-  </div>    
-  <div class="row">
-    <div class="col-sm-12">
-        <div class="card card-block">
-          <h5><i class="fa fa-rocket fa-fw"></i>Skills</h5>
-          <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
-            <li class="list-group-item"><?php echo $_SESSION["skill1"];?></li>
-            <li class="list-group-item"><?php echo $_SESSION["skill2"];?></li>
-            <li class="list-group-item"><?php echo $_SESSION["skill3"];?></li>
+            <li class="list-group-item">Cloud & Parallel Computing</li>
+            <li class="list-group-item">Big Data Analysis and Management</li>
+            <li class="list-group-item">High-performance and Low-Power Real-Time Systems</li>
+            <li class="list-group-item">Mobile Embedded Systems and Network Security</li>
           </ul>
         </div>
     </div>

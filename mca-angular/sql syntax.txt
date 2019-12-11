@@ -48,7 +48,6 @@ ALTER TABLE `register`
 --
 -- FOR job selection
 --
-
-select joblist.Job_Name, joblist.Demand from joblist, register where joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Education = register.education AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp
+select job_test.Job_Name, job_test.Hotness_Level from job_test, register where job_test.Skills_Required = register.skill1 AND job_test.Interests = register.interest1 AND job_test.Education = register.education ORDER BY job_test.Job_Name LIMIT 1
 
 
