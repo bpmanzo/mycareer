@@ -35,8 +35,18 @@ if(empty($error))
 {
  $query = "
   SELECT *, 
-  (select job_test.Job_Name from job_test, register where register.email = :email AND job_test.Skills_Required = register.skill1 AND job_test.Interests = register.interest1 AND job_test.Education = register.education LIMIT 1) 
-  AS hot_job 
+  (select joblist.Job_Name from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 1) 
+  AS hot_job1,
+  (select joblist.Job_Name from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill2 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 2,1) 
+  AS hot_job2,
+  (select joblist.Job_Name from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill3 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS hot_job3,
+  (select joblist.Demand from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 1) 
+  AS demand1,
+  (select joblist.Demand from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill2 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 2,1) 
+  AS demand2,
+  (select joblist.Demand from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill3 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS demand3
   FROM register 
   WHERE email = :email
  ";
@@ -54,15 +64,18 @@ if(empty($error))
      $_SESSION["lname"] = $row["lname"];
      $_SESSION["email"] = $row["email"];
      $_SESSION["education"] = $row["education"];
+     $_SESSION["degree"] = $row["degree"];
+     $_SESSION["workexp"] = $row["workexp"];
      $_SESSION["skill1"] = $row["skill1"];
      $_SESSION["skill2"] = $row["skill2"];
      $_SESSION["skill3"] = $row["skill3"];
      $_SESSION["interest1"] = $row["interest1"];
-     $_SESSION["interest2"] = $row["interest2"];
-     $_SESSION["interest3"] = $row["interest3"];
-     $_SESSION["interest4"] = $row["interest4"];
-     $_SESSION["interest5"] = $row["interest5"];
-     $_SESSION["hot_job"] = $row["hot_job"];
+     $_SESSION["hot_job1"] = $row["hot_job1"];
+     $_SESSION["hot_job2"] = $row["hot_job2"];
+     $_SESSION["hot_job3"] = $row["hot_job3"];
+     $_SESSION["demand1"] = $row["demand1"];
+     $_SESSION["demand2"] = $row["demand2"];
+     $_SESSION["demand3"] = $row["demand3"];
 
     }
     else

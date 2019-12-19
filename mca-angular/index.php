@@ -82,73 +82,59 @@ session_start();
       <div class="form-group">
         <label>Education:</label>
         <select name="education" ng-model="registerData.education" class="form-control" id="education">
-                <option>Pre-K12 (Grade 10)</option>
-                <option>K12 (Grade 11)</option>
                 <option>K12 (Grade 12)</option>
                 <option>College</option>
                 <option>With Degree</option>
-                <option>Vocational</option>
         </select>     
       </div>
 
       <div class="form-group">
-        <label>Interests:</label>
+        <label>Degree:</label>
+        <select name="degree" ng-model="registerData.degree" class="form-control" id="degree">
+                <option>Computer Engineering</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Not Applicable</option>
+        </select>     
+      </div>
+
+      <div class="form-group">
+        <label>Work Experience:</label>
+        <select name="workexp" ng-model="registerData.workexp" class="form-control" id="workexp">
+                <option>1-4 experience</option>
+                <option>None</option>
+                <option>OJT/Intern</option>
+        </select>     
+      </div>
+
+      <div class="form-group">
+        <label>Interest:</label>
         <select name="interest1" ng-model="registerData.interest1" class="form-control" id="interest1">
-                <option>Animation</option>
-                <option>Arts & Crafts</option>
-                <option>Computer Coding</option>
                 <option>Computer Games</option>
-                <option>Drawing</option>
-                <option>Filmography</option>
-                <option>Internet Surfing</option>
                 <option>Music</option>
-                <option>Photography</option>
-                <option>Reading</option>
                 <option>Social Media</option>
-                <option>Vlogging</option>
-                <option>Watching TV/Movie</option>
         </select>     
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
 
         <select name="interest2" ng-model="registerData.interest2" class="form-control" id="interest2">
-                <option>Animation</option>
-                <option>Arts & Crafts</option>
-                <option>Computer Coding</option>
                 <option>Computer Games</option>
-                <option>Drawing</option>
-                <option>Filmography</option>
-                <option>Internet Surfing</option>
                 <option>Music</option>
-                <option>Photography</option>
-                <option>Reading</option>
                 <option>Social Media</option>
-                <option>Vlogging</option>
-                <option>Watching TV/Movie</option>
         </select>     
       </div>
 
       <div class="form-group">
 
         <select name="interest3" ng-model="registerData.interest3" class="form-control" id="interest3">
-                <option>Animation</option>
-                <option>Arts & Crafts</option>
-                <option>Computer Coding</option>
                 <option>Computer Games</option>
-                <option>Drawing</option>
-                <option>Filmography</option>
-                <option>Internet Surfing</option>
                 <option>Music</option>
-                <option>Photography</option>
-                <option>Reading</option>
                 <option>Social Media</option>
-                <option>Vlogging</option>
-                <option>Watching TV/Movie</option>
         </select>     
-      </div>
+      </div> -->
 
-      <div class="form-group">
+<!--       <div class="form-group">
 
         <select name="interest4" ng-model="registerData.interest4" class="form-control" id="interest4">
                 <option>Animation</option>
@@ -183,7 +169,7 @@ session_start();
                 <option>Vlogging</option>
                 <option>Watching TV/Movie</option>
         </select>     
-      </div>
+      </div> -->
 
       <div class="form-group">
         <label>Skills:</label>
@@ -193,7 +179,6 @@ session_start();
                 <option>Detail-oriented</option>
                 <option>Math</option>
                 <option>Multi-tasking</option>
-                <option>Networking</option>
                 <option>Presentation Skills</option>
                 <option>Technical</option>
         </select>     
@@ -207,7 +192,6 @@ session_start();
                 <option>Detail-oriented</option>
                 <option>Math</option>
                 <option>Multi-tasking</option>
-                <option>Networking</option>
                 <option>Presentation Skills</option>
                 <option>Technical</option>
         </select>     
@@ -221,7 +205,6 @@ session_start();
                 <option>Detail-oriented</option>
                 <option>Math</option>
                 <option>Multi-tasking</option>
-                <option>Networking</option>
                 <option>Presentation Skills</option>
                 <option>Technical</option>
         </select>     
@@ -261,27 +244,25 @@ session_start();
         <div class="row">
         <div class="col-sm-9">
           <h2><strong>Welcome - <?php echo $_SESSION["fname"];?></strong></h2>
-              Welcome - <?php echo $_SESSION["hot_job"];?>
-
           <a href="logout.php">Logout</a>
         </div>
-        <div class="col-sm-3">
+<!--         <div class="col-sm-3">
           <div class="button pull-right">
             <a href="#" class="btn btn-outline-success btn-sm">Edit Profile <i class="fa fa-pencil"></i></a>
           </div>
-        </div>
+        </div> -->
         </div>
       </div>
 
       <div class="row" style="margin-top:20px;">
         <div class="col-sm-3"> 
-          <a href="#"> <img class="rounded-circle" src="//images.weserv.nl/?url=i.imgur.com/Md9jS0Ib.jpg" alt="Rick" ></a>
+          <a href="#"> <img class="rounded-circle" src="https://www.itsecuritynews.info/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="Rick" ></a>
         </div>
 
         <div class="col-sm-6"> 
-          <h5Associate Professor, <small>Dept. of Alien Agriculture, Jaarvlar-3 University</small></h5>
-          <p>PhD on Molecular Shwanky Physics</p>
-          <p>Address: 123 Cuba str Tampa, Fl, Earth 137</p>
+          <h5><?php echo $_SESSION["degree"];?>, <small>Degree</small></h5>
+          <p>Education: <?php echo $_SESSION["education"];?></p>
+          <p>Work Experience: <?php echo $_SESSION["workexp"];?></p>
         </div>
 
         <div class="col-sm-3 text-center social">
@@ -319,23 +300,49 @@ session_start();
   <div class="container">
 
   <div class="row">
+    <div class="col-sm-12">
+        <div class="card card-block">
+          <h5><i class="fa fa-rocket fa-fw"></i>Suited Jobs</h5>
+          <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
+            <li class="list-group-item"><?php echo $_SESSION["hot_job1"];?> (<?php echo $_SESSION["demand1"];?>) </li>
+            <li class="list-group-item"><?php echo $_SESSION["hot_job2"];?> (<?php echo $_SESSION["demand2"];?>) </li>
+            <li class="list-group-item"><?php echo $_SESSION["hot_job3"];?> (<?php echo $_SESSION["demand3"];?>) </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="row">
         <div class="col-sm-12">
           <div class="card card-block text-xs-left">
-            <h5><i class="fa fa-user fa-fw"></i>Biography</h5>
+            <h5><i class="fa fa-user fa-fw"></i></h5>
             
-              <p>Rick Sanchez C-137 is the father of Beth Smith, and the grandfather of Morty and Summer Smith. Aged 60 years old, he is said to have been away from the family for around fourteen years prior to the events of the show's first episode, "Pilot". He frequently travels on adventures through space and other planets and dimensions with his grandson Morty.</p>
+              <p>H1 - in demand now & in the future</p>
+              <p>H2 - in demand now, stable in the future</p>
+              <p>M1 - stable now & in the future</p>
+              <p>M2 - stable now, low in the future</p>
+              <p>L - low demand</p>
           </div>
         </div>
-      </div>
+      </div>     
+
   <div class="row">
     <div class="col-sm-12">
         <div class="card card-block">
-          <h5><i class="fa fa-rocket fa-fw"></i>Interests</h5>
+          <h5><i class="fa fa-rocket fa-fw"></i>Interest</h5>
           <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
-            <li class="list-group-item">Cloud & Parallel Computing</li>
-            <li class="list-group-item">Big Data Analysis and Management</li>
-            <li class="list-group-item">High-performance and Low-Power Real-Time Systems</li>
-            <li class="list-group-item">Mobile Embedded Systems and Network Security</li>
+            <li class="list-group-item"><?php echo $_SESSION["interest1"];?></li>
+          </ul>
+        </div>
+    </div>
+  </div>    
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="card card-block">
+          <h5><i class="fa fa-rocket fa-fw"></i>Skills</h5>
+          <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
+            <li class="list-group-item"><?php echo $_SESSION["skill1"];?></li>
+            <li class="list-group-item"><?php echo $_SESSION["skill2"];?></li>
+            <li class="list-group-item"><?php echo $_SESSION["skill3"];?></li>
           </ul>
         </div>
     </div>

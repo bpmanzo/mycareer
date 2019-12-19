@@ -14,12 +14,9 @@ CREATE TABLE `register` (
   `lname` varchar(250) NOT NULL,
   `skill1` varchar(250) NOT NULL,
   `skill2` varchar(250) NOT NULL,  
-  `skill3` varchar(250) NOT NULL,  
-  `interest1` varchar(250) NOT NULL,  
-  `interest2` varchar(250) NOT NULL,  
-  `interest3` varchar(250) NOT NULL,  
-  `interest4` varchar(250) NOT NULL,
-  `interest5` varchar(250) NOT NULL,
+  `skill3` varchar(250) NOT NULL,
+  `degree` varchar(250) NOT NULL,    
+  `workexp` varchar(250) NOT NULL,  
   `education` varchar(250) NOT NULL, 
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
@@ -48,6 +45,7 @@ ALTER TABLE `register`
 --
 -- FOR job selection
 --
-select job_test.Job_Name, job_test.Hotness_Level from job_test, register where job_test.Skills_Required = register.skill1 AND job_test.Interests = register.interest1 AND job_test.Education = register.education ORDER BY job_test.Job_Name LIMIT 1
+
+select joblist.Job_Name, joblist.Demand from joblist, register where joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Education = register.education AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp
 
 
