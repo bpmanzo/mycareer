@@ -1,0 +1,51 @@
+--
+-- Database: `testing`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `register`
+--
+USE test;
+CREATE TABLE `register` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(250) NOT NULL,
+  `lname` varchar(250) NOT NULL,
+  `skill1` varchar(250) NOT NULL,
+  `skill2` varchar(250) NOT NULL,  
+  `skill3` varchar(250) NOT NULL,
+  `degree` varchar(250) NOT NULL,    
+  `workexp` varchar(250) NOT NULL,  
+  `education` varchar(250) NOT NULL, 
+  `email` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `register`
+--
+ALTER TABLE `register`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `register`
+--
+ALTER TABLE `register`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- FOR job selection
+--
+
+select joblist.Job_Name, joblist.Demand from joblist, register where joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Education = register.education AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp
+
+

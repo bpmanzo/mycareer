@@ -10,25 +10,55 @@ session_start();
  <head>
   <title>myCareer Adventure</title>
 
+
+
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <!-- Bootstrap core CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
   <link href="main.css" rel="stylesheet">
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
  </head>
- <body>
+ <body id="page-top">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">My Career Adventure</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://www.apc.edu.ph/">APC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://www.ibm.com/ph-en">IBM</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
   <br />
    
   <br />
 
-  <div ng-app="login_register_app" ng-controller="login_register_controller" class="container form_style">
+  <div ng-app="login_register_app" ng-controller="login_register_controller">
    <?php
    
    if(!isset($_SESSION["fname"]))
    {
    ?>
+   <br />
+   
+   <br />
    <h3 align="center">myCareer Adventure</h3>
    <div class="alert {{alertClass}} alert-dismissible" ng-show="alertMsg">
     <a href="#" class="close" ng-click="closeMsg()" aria-label="close">&times;</a>
@@ -36,12 +66,12 @@ session_start();
    </div>
 
    
-   <div class="panel panel-default login_panel" ng-show="login_form">
+   <div class="panel panel-default" ng-show="login_form">
     <div class="panel-heading">
      <h3 class="panel-title">Login</h3>
     </div>
     <div class="panel-body">
-     <form method="post" ng-submit="submitLogin()">
+     <form method="post" ng-submit="submitLogin()" type="container">
       <div class="form-group">
        <label>Enter Your Email</label>
        <input type="text" name="email" ng-model="loginData.email" class="form-control" />
@@ -52,12 +82,19 @@ session_start();
       </div>
       <div class="form-group" align="center">
        <input type="submit" name="login" class="btn btn-primary" value="Login" />
-       <br />
-       <input type="button" name="register_link" class="btn btn-primary btn-link" ng-click="showRegister()" value="Register" />
+
+       <input type="button" name="register_link" class="btn btn-secondary" ng-click="showRegister()" value="Register" />
       </div>
      </form>
     </div>
-    
+   <br />
+   <br />
+   <br />
+   <br />
+   <br />
+   <br />
+   <br />
+
    </div>
 
    <div class="panel panel-default" ng-show="register_form">
@@ -219,8 +256,7 @@ session_start();
 
       <div class="form-group" align="center">
        <input type="submit" name="register" class="btn btn-primary" value="Register" />
-       <br />
-       <input type="button" name="login_link" class="btn btn-primary btn-link" ng-click="showLogin()" value="Login" />
+       <input type="button" name="login_link" class="btn btn-secondary" ng-click="showLogin()" value="Login" />
       </div>
      </form>
     </div>
@@ -230,124 +266,100 @@ session_start();
    else
    {
    ?>
-
    <!-- Login Success -->
-   <style>
-     
-
-   </style>
-   
-
-   <header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <div class="teacher-name">
-        <div class="row">
-        <div class="col-sm-9">
-          <h2><strong>Welcome - <?php echo $_SESSION["fname"];?></strong></h2>
-          <a href="logout.php">Logout</a>
-        </div>
-<!--         <div class="col-sm-3">
-          <div class="button pull-right">
-            <a href="#" class="btn btn-outline-success btn-sm">Edit Profile <i class="fa fa-pencil"></i></a>
-          </div>
-        </div> -->
-        </div>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">My Career Adventure</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#career">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="logout.php" class="btn btn-outline-secondary" role="button">Logout</a>
+          </li>
+        </ul>
       </div>
+    </div>
+  </nav>
 
-      <div class="row" style="margin-top:20px;">
-        <div class="col-sm-3"> 
-          <a href="#"> <img class="rounded-circle" src="https://www.itsecuritynews.info/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="Rick" ></a>
-        </div>
+ 
 
-        <div class="col-sm-6"> 
-          <h5><?php echo $_SESSION["degree"];?>, <small>Degree</small></h5>
-          <p>Education: <?php echo $_SESSION["education"];?></p>
-          <p>Work Experience: <?php echo $_SESSION["workexp"];?></p>
-        </div>
-
-        <div class="col-sm-3 text-center social">
-          <span class="number">Email:<strong><?php echo $_SESSION["email"];?></strong></span>
-          <div class="button-email">
-            <a href="mailto:arick@yahoo.com" class="btn btn-outline-success btn-block"><i class="fa fa-envelope-o"></i> Send Email</a>
-          </div>
-          <div class="social-icons">
-            <a href="#">
-            <span class="fa-stack">
-              <i class="fa fa-circle fa-stack-2x" ></i>
-              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-            </span></a>
-            <a href="#">
-            <span class="fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-            </span></a>
-            <a href="#">
-            <span class="fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span></a>
-            <a href="#">
-            <span class="fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-slideshare fa-stack-1x fa-inverse"></i>
-            </span></a>
-
-          </div>
-        </div>
-      </div>
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Welcome - <?php echo $_SESSION["fname"];?></h1>
+      <p class="lead">Start your adventure</p>
     </div>
   </header>
-  <div class="container">
 
-  <div class="row">
-    <div class="col-sm-12">
-        <div class="card card-block">
-          <h5><i class="fa fa-rocket fa-fw"></i>Suited Jobs</h5>
-          <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
-            <li class="list-group-item"><?php echo $_SESSION["hot_job1"];?> (<?php echo $_SESSION["demand1"];?>) </li>
-            <li class="list-group-item"><?php echo $_SESSION["hot_job2"];?> (<?php echo $_SESSION["demand2"];?>) </li>
-            <li class="list-group-item"><?php echo $_SESSION["hot_job3"];?> (<?php echo $_SESSION["demand3"];?>) </li>
-          </ul>
-        </div>
-    </div>
-  </div>
-  <div class="row">
-        <div class="col-sm-12">
-          <div class="card card-block text-xs-left">
-            <h5><i class="fa fa-user fa-fw"></i></h5>
-            
-              <p>H1 - in demand now & in the future</p>
-              <p>H2 - in demand now, stable in the future</p>
-              <p>M1 - stable now & in the future</p>
-              <p>M2 - stable now, low in the future</p>
-              <p>L - low demand</p>
-          </div>
-        </div>
-      </div>     
-
-  <div class="row">
-    <div class="col-sm-12">
-        <div class="card card-block">
-          <h5><i class="fa fa-rocket fa-fw"></i>Interest</h5>
-          <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
+  <section id="profile">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Career Profile</h2>
+          <p class="lead"><h5><?php echo $_SESSION["degree"];?>, <small>Degree</small></h5></p>
+          <p>Education: <?php echo $_SESSION["education"];?></p>
+          <p>Work Experience: <?php echo $_SESSION["workexp"];?></p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut vulputate turpis. Donec pulvinar diam quis purus consectetur, consectetur sodales lacus rhoncus. Cras mauris ipsum, venenatis ac interdum ac, egestas nec augue. In ipsum turpis, interdum at lorem a, ullamcorper laoreet mi. Mauris gravida maximus ullamcorper.</p>
+          <h5>Skills and Interests</h5>
+          <ul>
             <li class="list-group-item"><?php echo $_SESSION["interest1"];?></li>
-          </ul>
-        </div>
-    </div>
-  </div>    
-  <div class="row">
-    <div class="col-sm-12">
-        <div class="card card-block">
-          <h5><i class="fa fa-rocket fa-fw"></i>Skills</h5>
-          <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
             <li class="list-group-item"><?php echo $_SESSION["skill1"];?></li>
             <li class="list-group-item"><?php echo $_SESSION["skill2"];?></li>
             <li class="list-group-item"><?php echo $_SESSION["skill3"];?></li>
           </ul>
+          
         </div>
+      </div>
     </div>
-  </div>
-</div> 
+  </section>
+
+  <section id="career" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Careers For You</h2>
+          <ul>  
+            <li class="list-group-item"><?php echo $_SESSION["hot_job1"];?> (<?php echo $_SESSION["demand1"];?>) </li>
+            <li class="list-group-item"><?php echo $_SESSION["hot_job2"];?> (<?php echo $_SESSION["demand2"];?>) </li>
+            <li class="list-group-item"><?php echo $_SESSION["hot_job3"];?> (<?php echo $_SESSION["demand3"];?>) </li>
+          </ul>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+
+          <p>H1 - in demand now & in the future</p>
+          <p>H2 - in demand now, stable in the future</p>
+          <p>M1 - stable now & in the future</p>
+          <p>M2 - stable now, low in the future</p>
+          <p>L - low demand</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About the Project</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -357,8 +369,28 @@ session_start();
 
   </div>
  </body>
+   <!-- Footer -->
+ <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; My Career Adventure 2020</p>
+    </div>
+    <!-- /.container -->
+ </footer>
+
+
+     <!-- Bootstrap core JavaScript -->
+ <script src="vendor/jquery/jquery.min.js"></script>
+ <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+ <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+ <script src="scrolling-nav.js"></script>
+
 </html>
 
+  
 <script>
 
 
