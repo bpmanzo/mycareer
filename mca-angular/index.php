@@ -87,6 +87,8 @@ session_start();
       </div>
      </form>
     </div>
+
+
    <br />
    <br />
    <br />
@@ -334,7 +336,10 @@ session_start();
             <li class="list-group-item"><?php echo $_SESSION["hot_job3"];?> (<?php echo $_SESSION["demand3"];?>) </li>
           </ul>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          <p>By making an account from the website, users will input their education, degree, work experience, interests, and skills. These unsorted data will be registered and sorted, by Watson Discovery. Knowledge studio on the other hand will take key words as data and compare it from registered and/or collected from public data sources and to find a match.</p> 
+          <p>After comparing and finding a match, it will then sort it from five categories: H1 for in demand now & in the future, H2 for in demand now, stable in the future, M1 for stable now and in the future, M2 for stable now low in the future and L for low in demand. After sorting it will present in the “Careers for You” for the user to decide.</p>
+
+          <p>To know more about these careers, click the <i><b>Watson Assistant</b></i> located at the lower right part of your screen.</p>
 
           <p>H1 - in demand now & in the future</p>
           <p>H2 - in demand now, stable in the future</p>
@@ -352,7 +357,8 @@ session_start();
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>About the Project</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+          <p class="lead">This application named, “MyCareer Adventure” was created in order to help students in deciding their career path based on their skills and interest. The suggested jobs are classified into six (6) classifications; in demand now and in the future, in demand now and stable in the future, stable now and in the future, stable now and low demand in the future, low demand.</p>
+          <p class="lead">It can predict suitable jobs for the users that are in-demand and provide a learning path in order for the user to achieve that job. The learning path includes the top schools that excels in producing students that are competent and industry ready. Accredited training centers are also included in order to get a certificate that will surely help the users to land in that job. Moreover, using the application could lessen the struggle of many students in choosing well suited courses for them and to prevent them from shifting to others courses just because they are still undecided on what career they will take.</p>
 
 
 
@@ -361,6 +367,16 @@ session_start();
     </div>
   </section>
 
+<!-- Watson Assistant   -->
+<script src=https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js></script>
+<script>
+  window.loadWatsonAssistantChat({
+    integrationID: "38e4b1e2-e8d0-41ff-ae2e-66285594ec3d", // The ID of this integration.
+    region: "us-south" // The region your integration is hosted in.
+  }).then(function(instance){
+    instance.render();
+  });
+</script>
 
 
    <?php
