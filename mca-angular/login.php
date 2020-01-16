@@ -46,7 +46,26 @@ if(empty($error))
   (select joblist.Demand from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill2 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 2,1) 
   AS demand2,
   (select joblist.Demand from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill3 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
-  AS demand3
+  AS demand3,
+  (select joblist.Schools from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 1) 
+  AS school1,
+  (select joblist.Schools from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill2 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 2,1) 
+  AS school2,
+  (select joblist.Schools from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill3 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS school3,
+  (select joblist.years_to_be_employed from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS yr1,
+  (select joblist.years_to_be_employed from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill2 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS yr2,
+  (select joblist.years_to_be_employed from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill3 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS yr3,
+  (select joblist.Companies from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill1 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS com1,
+  (select joblist.Companies from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill2 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS com2,
+  (select joblist.Companies from joblist, register where register.email = :email AND joblist.Skills_Required = register.skill3 AND joblist.Interests = register.interest1 AND joblist.Degree = register.degree AND joblist.Work_Experience = register.workexp AND joblist.Education = register.education LIMIT 3,1) 
+  AS com3
+
   FROM register 
   WHERE email = :email
  ";
@@ -76,6 +95,15 @@ if(empty($error))
      $_SESSION["demand1"] = $row["demand1"];
      $_SESSION["demand2"] = $row["demand2"];
      $_SESSION["demand3"] = $row["demand3"];
+     $_SESSION["school1"] = $row["school1"];
+     $_SESSION["school2"] = $row["school2"];
+     $_SESSION["school3"] = $row["school3"];
+     $_SESSION["yr1"] = $row["yr1"];
+     $_SESSION["yr2"] = $row["yr2"];
+     $_SESSION["yr3"] = $row["yr3"];
+     $_SESSION["com1"] = $row["com1"];
+     $_SESSION["com2"] = $row["com2"];
+     $_SESSION["com3"] = $row["com3"];
 
     }
     else

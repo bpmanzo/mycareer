@@ -330,11 +330,72 @@ session_start();
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Careers For You</h2>
-          <ul>  
-            <li class="list-group-item"><?php echo $_SESSION["hot_job1"];?> (<?php echo $_SESSION["demand1"];?>) </li>
-            <li class="list-group-item"><?php echo $_SESSION["hot_job2"];?> (<?php echo $_SESSION["demand2"];?>) </li>
-            <li class="list-group-item"><?php echo $_SESSION["hot_job3"];?> (<?php echo $_SESSION["demand3"];?>) </li>
-          </ul>
+          <div class="accordion" id="accordionExample">
+            <!-- card one -->
+            <div class="card">
+              <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <?php echo $_SESSION["hot_job1"];?> (<?php echo $_SESSION["demand1"];?>)
+                </button>
+              </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li class="list-group-item ">Specializing Schools: <?php echo $_SESSION["school1"];?></li>
+                    <li class="list-group-item ">Years left to be employed: <?php echo $_SESSION["yr1"];?></li>
+                    <li class="list-group-item ">Top Company: <?php echo $_SESSION["com1"];?></li>
+                  </ul>   
+                </div>
+              </div>
+            </div>
+
+            <!-- card two -->
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <?php echo $_SESSION["hot_job2"];?> (<?php echo $_SESSION["demand2"];?>)
+                </button>
+              </h5>
+              </div>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li class="list-group-item ">Specializing Schools: <?php echo $_SESSION["school3"];?></li>
+                    <li class="list-group-item ">Years left to be employed: <?php echo $_SESSION["yr3"];?></li>
+                    <li class="list-group-item ">Top Company: <?php echo $_SESSION["com3"];?></li>
+                  </ul>     
+                </div>
+              </div>
+            </div>
+
+            <!-- card three -->
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <?php echo $_SESSION["hot_job3"];?> (<?php echo $_SESSION["demand3"];?>)
+                </button>
+              </h5>
+              </div>
+
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li class="list-group-item ">Specializing Schools: <?php echo $_SESSION["school3"];?></li>
+                    <li class="list-group-item ">Years left to be employed: <?php echo $_SESSION["yr3"];?></li>
+                    <li class="list-group-item ">Top Company: <?php echo $_SESSION["com3"];?></li>
+                  </ul>     
+                </div>
+              </div>
+            </div>
+  
+          </div>
+       
 
           <p>By making an account from the website, users will input their education, degree, work experience, interests, and skills. These unsorted data will be registered and sorted, by Watson Discovery. Knowledge studio on the other hand will take key words as data and compare it from registered and/or collected from public data sources and to find a match.</p> 
           <p>After comparing and finding a match, it will then sort it from five categories: H1 for in demand now & in the future, H2 for in demand now, stable in the future, M1 for stable now and in the future, M2 for stable now low in the future and L for low in demand. After sorting it will present in the “Careers for You” for the user to decide.</p>
